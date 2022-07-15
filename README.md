@@ -1,3 +1,4 @@
 ## My Config
 
-zsh config I use
+- .zsh : zsh config 
+- Microsoft.PowerShell_profile.ps1 : powershell config
