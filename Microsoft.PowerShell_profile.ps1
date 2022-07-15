@@ -10,16 +10,19 @@ $PSHomeDir = Split-Path $PROFILE;
 oh-my-posh init pwsh --config $PSHomeDir/the-unnamed.omp.json | Invoke-Expression
 
 # Alias
-Set-Alias -Name ni -Value npm install;
-Set-Alias -Name pni -Value pnpm install;
-Set-Alias -Name pna -Value pnpm add;
-Set-Alias -Name nt -Value npm run test;
-Set-Alias -Name nd -Value npm run dev;
-Set-Alias -Name nb -Value npm run build;
-Set-Alias -Name nl -Value npm run lint:fix;
-Set-Alias -Name ns -Value npm run start;
-Set-Alias -Name np -Value npm publish --access public;
+
 Set-Alias -Name proxy -Value Set-PSProxy;
+function ni($name=''){npm install $name}
+function pni(){pnpm install}
+function pna($name=''){npm add $name}
+function nt(){npm run test}
+function nb(){npm run build}
+function nl(){npm run lint:fix}
+function ns(){npm run start}
+function nd(){npm run dev}
+function np(){npm publish --access public}
+function nr($name){npm run $name}
+
 
 # which命令
 function which($name){
@@ -138,6 +141,5 @@ Function Set-NetProxy {
         }
     }
 }
-
 
 
